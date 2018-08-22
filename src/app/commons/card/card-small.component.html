@@ -1,0 +1,16 @@
+<div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 reset-padding">
+  <div class="widget widget-primary card" [style.background-color]="bgColor">
+    <div class="widget-statistic-header">
+      {{inputData.header}}
+    </div>
+    <div class="widget-statistic-body">
+      <div class="widget-statistic-value" id="areaS">
+        {{inputData.value.num}} <span> {{inputData.value.unit}}</span>
+      </div>
+      <div class="widget-statistic-description">
+        {{inputData.description.des}} <strong>{{inputData.description.value}}</strong> {{inputData.description.unit}}
+      </div>
+    </div>
+  </div>
+</div>
+

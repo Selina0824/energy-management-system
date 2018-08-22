@@ -1,0 +1,25 @@
+@function px2rem($px){
+  $rem: 37.5px;
+  @return ($px/$rem) + rem;
+}
+@media screen and (min-width: 1000px){
+  .dash-board {
+    width: 50%;
+    height: 180px; float: left
+  }
+}
+
+@media screen and (max-width: 999px){
+  .dash-board {
+    width: 50%;
+    height: px2rem(300px);
+    float: left
+  }
+}
+.tabs {
+  clear: both;
+}
+
+.Shell_drilldown {
+  margin-bottom: 50px;
+}

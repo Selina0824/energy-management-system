@@ -1,0 +1,71 @@
+@function px2rem($px){
+  $rem: 37.5px;
+  @return ($px/$rem) + rem;
+}
+.card-region {
+  background-color: #97a8b9;
+}
+
+tbody {
+  width: 100%;
+}
+
+td {
+  padding: 2px;
+}
+
+@media screen and (min-width: 1000px){
+  .widget {
+    width: 100%;
+    min-height: 120px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 6px 6px 5px #888888;
+    border: solid 3px rgb(214, 214, 214);
+    border-radius: 10px;
+    padding: 15px 15px;
+  }
+  .widget-statistic-header {
+    display: block;
+    text-align: center;
+    color: white;
+    font-family: "Times New Roman";
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .value{
+    font-size: 14px;
+    color: white;
+    padding:2px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 999px){
+  .widget {
+    width: 100%;
+    min-height: px2rem(220px);
+    margin-bottom: px2rem(20px);
+    position: relative;
+    box-shadow: 6px 6px 5px #888888;
+    border: solid 3px rgb(214, 214, 214);
+    border-radius: 10px;
+    padding: px2rem(15px) px2rem(15px);
+  }
+  .widget-statistic-header {
+    display: block;
+    text-align: center;
+    margin-bottom: px2rem(8px);
+    color: white;
+    font-family: "Times New Roman";
+    font-size: px2rem(30px);
+    font-weight: 600;
+  }
+  .value{
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    padding: 2px;
+  }
+}
+

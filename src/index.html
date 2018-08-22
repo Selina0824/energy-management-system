@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Smart Energy</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!--highcharts-->
+  <script src="https://img.hcharts.cn/highstock/highstock.js"></script>
+  <script src="https://img.hcharts.cn/highcharts/highcharts-more.js"></script>
+  <!--<script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>-->
+  <!--<script src="https://img.hcharts.cn/highcharts/modules/export-data.js"></script>-->
+  <script src="https://img.hcharts.cn/highcharts/modules/solid-gauge.js"></script>
+  <script src="https://img.hcharts.cn/highcharts/modules/drilldown.js"></script>
+  <!--datetimepicker-->
+  <link href="assets/vendors/datetimepicker/bootstrap-datetimepicker.css">
+  <script src="assets/vendors/datetimepicker/bootstrap-datetimepicker.js"></script>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <script src="assets/vendors/js/jquery.table2excel.min.js"></script>
+</head>
+<body>
+  <app-root></app-root>
+<script>
+  //获取视窗宽度和高度
+  let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+  console.log(htmlWidth);
+
+  let htmlDom = document.getElementsByTagName('html')[0];
+
+  htmlDom.style.fontSize = `${htmlWidth/20}px`;
+</script>
+</body>
+</html>

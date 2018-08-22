@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~font-awesome/css/font-awesome.css';
+@function px2rem($px){
+  $rem: 37.5px;
+  @return ($px/$rem) + rem;
+}
+
+@media screen and (min-width: 1000px){
+  .title{
+    background-color: #52a4e0;
+    padding: 10px;
+    height: 35px;
+  }
+
+  .Shell{
+    border: groove 1px rgba(58, 58, 58, 0.1);
+    float: left;
+    width:100%;
+    height:480px;
+    margin-top: 15px;
+  }
+
+  .card-top{
+    padding-top: 10px;
+    clear: both;
+  }
+}
+
+@media screen and (max-width: 999px){
+  .title{
+    background-color: #52a4e0;
+    padding: 10px;
+    height: 35px;
+  }
+
+  .Shell{
+    border: groove 1px rgba(58, 58, 58, 0.1);
+    float: left;
+    width:100%;
+    height:480px;
+    margin-top: 15px;
+  }
+
+  .card-top{
+    padding-top: 10px;
+    clear: both;
+  }
+}
+
+.query-div {
+  margin: 10px;
+
+  .query-part{
+    padding-bottom: 5px;
+  }
+
+  .ant-cascader-picker {
+    width: 250px;
+  }
+  //.title-time,.title-region{
+  //  font-size: 18px;
+  //}
+  .radio-label {
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  @media screen and (min-width: 1000px){
+    .date-select {
+      display: inline;
+    }
+  }
+
+  @media screen and (max-width: 999px){
+    .date-select {
+      padding-top: 5px;
+    }
+  }
+}
+
+.no-data {
+  margin-top:200px;
+  margin-left: 45%;
+  font-size: 20px;
+  font-family: "Times New Roman";
+  color: #696969;
+}

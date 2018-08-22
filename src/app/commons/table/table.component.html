@@ -1,0 +1,35 @@
+<div class="table_div">
+  <div><h3 style="text-align: center">{{inputData.title}}</h3></div>
+  <div class="div_clear">
+    <div class="center_top">
+      <div style="float:right;">
+        <a id="btn">导出报表</a>
+      </div>
+  </div>
+  <div class="div_clear">
+    <div class="center_center">
+      <div class="table_content">
+        <table cellspacing="0px" cellpadding="0px" class="table2excel">
+          <thead >
+          <tr>
+            <td width="20%">{{inputData.headers[0]}}</td>
+            <td width="20%">{{inputData.headers[1]}}</td>
+            <td width="20%">{{inputData.headers[2]}}</td>
+            <td width="20%">{{inputData.headers[3]}}</td>
+            <td width="20%">{{inputData.headers[4]}}</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of inputData.datas">
+            <td >{{data[0]}}</td>
+            <td >{{data[1]}}</td>
+            <td >{{data[2]}}</td>
+            <td >{{data[3]}}</td>
+            <td >{{data[4]}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

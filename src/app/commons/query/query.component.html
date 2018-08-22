@@ -1,0 +1,34 @@
+<div class="query-div">
+  <div class="col-lg-4 col-md-6 col-xs-12">
+    <span >区域 : </span>
+    <nz-cascader
+      nzChangeOnSelect
+      [nzOptions]="nzOptions"
+      [(ngModel)]="values"
+      (ngModelChange)="onChanges($event)">
+    </nz-cascader>
+  </div>
+  <div class="col-lg-4 col-md-6 col-xs-12">
+    <span class="title-time">时间 : </span>
+    <nz-radio-group [(ngModel)]="time">
+      <label nz-radio-button nzValue="date"><span>日</span></label>
+      <label nz-radio-button nzValue="week"><span>周</span></label>
+      <label nz-radio-button nzValue="month"><span>月</span></label>
+      <!--<label nz-radio-button nzValue="range"><span>自定义</span></label>-->
+    </nz-radio-group>
+    <div class="date-select">
+      <nz-date-picker *ngIf="time==='date'" [(ngModel)]="date" (ngModelChange)="onChange($event)"  ></nz-date-picker>
+      <nz-month-picker *ngIf="time==='month'" [(ngModel)]="date" (ngModelChange)="onChange($event)" nzPlaceHolder="Select month"></nz-month-picker>
+      <!--<nz-range-picker *ngIf="time==='range'" [(ngModel)]="dateRange" (ngModelChange)="onChange($event)" ></nz-range-picker>-->
+      <nz-week-picker *ngIf="time==='week'" [(ngModel)]="date" (ngModelChange)="getWeek($event)" nzPlaceHolder="Select week"></nz-week-picker>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 col-xs-12 search-btn-container">
+    <button type="button" class="btn-primary btn search-btn" style="float: right" (click)="search()">查询</button>
+  </div>
+</div>
+
+
+
+
+

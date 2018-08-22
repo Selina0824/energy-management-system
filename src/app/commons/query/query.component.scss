@@ -1,0 +1,30 @@
+@function px2rem($px){
+  $rem: 37.5px;
+  @return ($px/$rem) + rem;
+}
+.query-div {
+  margin: 10px;
+
+  &.ant-cascader-picker {
+    width: 300px;
+  }
+  div{
+    font-size: 18px;
+  }
+  &.title-time{
+    font-size: 18px;
+  }
+
+  &.date-select {
+    padding: 5px;
+    display: inline;
+  }
+  .search-btn-container {
+    position: relative;
+  }
+  .search-btn {
+    position: absolute;
+    //top: 38px;
+    //right: 5px;
+  }
+}

@@ -1,0 +1,44 @@
+<mat-sidenav-container class="app-root" fullscreen>
+  <mat-sidenav #start id="start" [mode]="'side'">
+    <mat-nav-list>
+      <a class="nav-list" mat-list-item routerLink="/home" (click)="start.close()">
+        首页
+      </a>
+      <a mat-list-item routerLink="/monitor-region" (click)="start.close()">
+        <span *ngIf="systemView">区域</span>能耗监测
+      </a>
+      <a mat-list-item routerLink="/monitor-system" (click)="start.close()" *ngIf="systemView">
+        系统能耗监测
+      </a>
+      <a mat-list-item routerLink="/analysis" (click)="start.close()">
+        能耗分析
+      </a>
+      <a mat-list-item routerLink="/report" (click)="start.close()">
+        能耗报表
+      </a>
+      <button (click)="start.toggle()" class="btn btn-default">关闭</button>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <div>
+    <mat-toolbar  class="top-toolbar">
+      <mat-toolbar-row >
+        <a mat-icon-button (click)="start.toggle()">
+          <mat-icon fontSet="fontawesome" fontIcon="fa-bars"></mat-icon>
+        </a>
+           <!--
+        <span class="top-nav-spacer"></span>
+        <a class="top-btn" routerLink="/user/detail">
+          <mat-icon fontSet="fontawesome" fontIcon="fa-user"></mat-icon>
+        </a>
+      -->
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-divider></mat-divider>
+    <div class="app-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-sidenav-container>
+

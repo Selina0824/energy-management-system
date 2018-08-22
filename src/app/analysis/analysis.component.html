@@ -1,0 +1,79 @@
+<div class="query-div">
+  <div class="col-lg-4 col-md-4 col-xs-12 query-part">
+    <span class="title-region">区域 : </span>
+    <nz-cascader
+      nzChangeOnSelect
+      [nzOptions]="regions"
+      [(ngModel)]="values"
+      (ngModelChange)="onChanges($event)">
+    </nz-cascader>
+  </div>
+  <div class="col-lg-6 col-md-6 col-xs-12 query-part">
+    <span class="title-time">时间 : </span>
+    <nz-radio-group [(ngModel)]="time">
+      <label nz-radio-button nzValue="date"><span>日</span></label>
+      <label nz-radio-button nzValue="week"><span>周</span></label>
+      <label nz-radio-button nzValue="month"><span>月</span></label>
+      <label nz-radio-button nzValue="range"><span>自定义</span></label>
+    </nz-radio-group>
+    <div class="date-select">
+      <nz-date-picker *ngIf="time==='date'" [(ngModel)]="date" (ngModelChange)="onChange($event)"  nzPlaceHolder="Select date"></nz-date-picker>
+      <nz-month-picker *ngIf="time==='month'" [(ngModel)]="date" (ngModelChange)="onChange($event)" nzPlaceHolder="Select month"></nz-month-picker>
+      <nz-range-picker *ngIf="time==='range'" [(ngModel)]="dateRange" (ngModelChange)="onChange($event)" ></nz-range-picker>
+      <nz-week-picker *ngIf="time==='week'" [(ngModel)]="date" (ngModelChange)="getWeek($event)" nzPlaceHolder="Select week"></nz-week-picker>
+    </div>
+  </div>
+  <div class="col-lg-2 col-md-2 col-xs-12 query-part search-btn-container">
+    <button type="button" class="btn-primary btn search-btn" style="float: right" (click)="search()">查询</button>
+  </div>
+</div>
+<div style="padding-top: 10px;
+  clear: both;">
+  <ul id="myTab" class="nav nav-tabs">
+    <li class="active"><a href="#tongbi" data-toggle="tab">同比分析</a></li>
+    <li><a href="#huanbi" data-toggle="tab">环比分析</a></li>
+    <li><a href="#duibi" data-toggle="tab">对比分析</a></li>
+  </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="tongbi">
+      <div class="chart-container">
+        <div class="Shell">
+          <div class="title">
+            <p class="text1"> 区域能耗同比分析</p>
+          </div>
+          <div id="main"></div>
+        </div>
+        <div class="Shell" >
+          <div class="title">
+            <p class="text1"> 系统能耗同比分析</p>
+          </div>
+          <ul id="myTab2" class="nav nav-tabs">
+            <li class="active"><a href="#lighting" data-toggle="tab">照明系统</a></li>
+            <li><a href="#air" data-toggle="tab">空调系统</a></li>
+            <li><a href="#lift" data-toggle="tab">电梯系统</a></li>
+          </ul>
+          <div id="myTabContent2" class="tab-content">
+            <div class="tab-pane fade in active" id="lighting" ></div>
+            <div class="tab-pane fade" id="air" ></div>
+            <div class="tab-pane fade" id="lift" ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="huanbi">
+      <div class="Shell" style="height:600px;">
+        <div class="title">区域环比分析</div>
+        <div id="huanbicontainer" ></div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="duibi">
+      <div class="Shell" style="height:600px;">
+        <div class="title">
+          <p class="text1"> 区域对比分析</p>
+        </div>
+        <div id="duibicontainer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,12 @@
+@function px2rem($px){
+  $rem: 37.5px;
+  @return ($px/$rem) + rem;
+}
+/* Table Head */
+.tableArea{
+  clear:both;
+  margin-top: 20px;
+  //border-top: 0.5px groove rgba(167, 167, 167, 0.44);
+}
+
+
