@@ -57,6 +57,8 @@ export class ReportComponent implements OnInit {
           }
         );
       this.dataGetService.setParams(this.config, this.time, this.date, this.dateRange, this.values);
+    } else{
+      this.onMockData();
     }
   }
 

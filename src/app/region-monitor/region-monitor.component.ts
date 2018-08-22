@@ -79,6 +79,8 @@ export class RegionMonitorComponent implements OnInit {
         );
       this.dataGetService.setParams(this.config, this.time, this.date, this.dateRange, this.values);
       this.onSearch();
+    } else{
+      this.onMockData();
     }
 
     this.initView();

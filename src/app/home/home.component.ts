@@ -63,6 +63,10 @@ export class HomeComponent implements OnInit {
         );
       this.dataGetService.setParams(this.config, this.time, this.date, this.dateRange, this.values);
       this.onSearch();
+    } else{
+
+      // if no server, show mockdata
+      this.onMockData();
     }
 
     this.initView();
